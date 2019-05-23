@@ -2,7 +2,7 @@
 #include "xlcd.h"
 
  
-void Set_LCD (void)                       //Configuraci�n del modulo LCD 
+void Set_LCD (void)                       //Configuración del modulo LCD 
 {
     OpenXLCD (EIGHT_BIT & LINES_5X7);
     WriteCmdXLCD (SHIFT_DISP_LEFT);
@@ -19,7 +19,7 @@ void Write_firstMessage (void)           //Escribe el mensaje en la pantalla.
     
 }
     
-void Write_secondMessage(void)         //Escribe un segundo mensaje, borrando primero el anterior.
+void Write_secondMessage(void)         //Escribe un segundo mensaje, en la siguient línea.
 {
     putrsXLCD("== ALTERI ==");
     WriteCmdXLCD (NEXT_LINE);
@@ -32,7 +32,7 @@ void main (void)
     Write_firstMessage();
     
     delay_ms (2000);
-    WriteCmdXLCD (BORRAR_PANTALLA);
+    WriteCmdXLCD (BORRAR_PANTALLA);       
     Write_secondMessage();
     while (1);
 }
